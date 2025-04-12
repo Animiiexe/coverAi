@@ -59,7 +59,18 @@ export default function Page() {
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=20&width=20')] bg-[length:50px_50px] opacity-10"></div>
 
         {/* Content */}
+        
         <div className="relative h-full flex flex-col items-center justify-center p-8 z-10">
+        <div className="mb-6">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center shadow-lg shadow-purple-500/20"
+              >
+                <Sparkles className="h-10 w-10 text-white" />
+              </motion.div>
+            </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
