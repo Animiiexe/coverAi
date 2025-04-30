@@ -15,7 +15,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
             Transform your ideas into{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
               stunning visuals
