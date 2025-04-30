@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heart, Sparkles, Twitter, Discord } from "lucide-react";
+import { Heart, Sparkles, Twitter} from "lucide-react";
 
 export default function Footer() {
   return (

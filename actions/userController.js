@@ -1,4 +1,5 @@
 "use server";
+export const runtime = "nodejs";
 
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
