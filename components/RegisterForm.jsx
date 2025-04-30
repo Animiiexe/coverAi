@@ -1,12 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
 import { useActionState } from "react";
-import { login } from "@/actions/userController";
+import { motion } from "framer-motion";
 import { Sparkles, ImageIcon, Zap, ChevronRight } from "lucide-react";
-import Alert from "@/components/Alert";
+import { register } from "@/actions/userController";
+import Alert from "./Alert";
 
-export default function page() {
-  const [formState, formAction] = useActionState(login, {});
+export default function RegisterForm() {
+  const [formState, formAction] = useActionState(register, {});
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-black text-white overflow-hidden">
@@ -88,25 +88,28 @@ export default function page() {
         >
           <div className="mb-8">
             <h2 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-500">
-            Welcome Back
+              Join CoverAI
             </h2>
             <p className="text-gray-400">
-            Sign in to continue your creative journey
+              Start creating stunning AI-generated images today
             </p>
           </div>
 
           <form className="space-y-5" action={formAction}>
             <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-300">
-               Username
+                Username
               </label>
               <input
-              type="text"
-                   name="username"
+                type="text"
+                name="username"
                 placeholder="you@example"
                 className="w-full py-2.5 px-2 bg-gray-900/80  rounded-md"
                 required
               />
+              {formState?.errors?.username && (
+                <Alert message={formState.errors?.username} />
+              )}
             </div>
 
             <div className="space-y-2">
@@ -116,19 +119,21 @@ export default function page() {
                 </label>
               </div>
               <input
-               name="password"
+                name="password"
                 type="password"
                 placeholder="••••••••"
                 className="w-full py-2.5 px-2 bg-gray-900/80  rounded-md"
               />
-                 {formState.success == false && <Alert message={formState.message} />}
+              {formState?.errors?.password && (
+                <Alert message={formState.errors?.password} />
+              )}
             </div>
 
             <button
               type="submit"
               className="w-full py-3 mt-6 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group"
             >
-              <span>Sign in</span>
+              <span>Create Account</span>
               <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
