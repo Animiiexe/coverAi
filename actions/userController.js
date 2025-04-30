@@ -1,7 +1,5 @@
 "use server";
-
-
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { isAlphaNumeric } from "@/lib/utils";
 import { getCollection } from "@/lib/db";
