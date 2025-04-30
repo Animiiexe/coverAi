@@ -1,4 +1,5 @@
 import { Sparkles } from "lucide-react";
+import PricingPage from "./PricingPage";
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-purple-950 to-black">
@@ -27,6 +28,7 @@ export default function Dashboard() {
           </p>
         </div>
       </div>
+      <PricingPage/>
     </div>
   );
 }

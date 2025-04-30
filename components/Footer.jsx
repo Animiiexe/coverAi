@@ -1,67 +1,97 @@
+import React from "react";
 import Link from "next/link";
-import { Heart, Sparkles, Twitter} from "lucide-react";
+import { Sparkles,  Twitter, Github } from "lucide-react";
 
-export default function Footer() {
+
+const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-transparent to-[#BA3CFF]/5 backdrop-blur-lg">
-      <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          
-          {/* Brand Column */}
-          <div className="flex flex-col items-start space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#BA3CFF] rounded-xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-300 to-[#BA3CFF] text-transparent bg-clip-text">
+    <footer className="bg-[#0c0a16] py-12 px-10 mt-2">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-1">
+            <Link href="/" className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-[#BA3CFF] rounded-xl flex items-center justify-center hover:rotate-12 transition-transform duration-300 shadow-lg shadow-[#BA3CFF]/30">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+              <span className="text-xl font-bold tracking-tight text-white">
                 CoverAI
               </span>
-            </div>
-            <p className="text-white/70 text-sm">
+            </Link>
+            <p className="mt-4 text-gray-400 text-sm">
               Transform your ideas into stunning visuals with AI
             </p>
+            <div className="flex space-x-4 mt-6">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                < Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
-          {/* Links Columns */}
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-white font-medium mb-2">Product</h3>
-            <Link href="/features" className="text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">Features</Link>
-            <Link href="/pricing" className="text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">Pricing</Link>
-            <Link href="/examples" className="text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">Examples</Link>
+          <div>
+            <h4 className="text-white font-medium mb-4">Product</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/features" className="hover:text-white text-sm">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-white text-sm">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/examples" className="hover:text-white text-sm">
+                  Examples
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-white font-medium mb-2">Resources</h3>
-            <Link href="/docs" className="text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">Documentation</Link>
-            <Link href="/blog" className="text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">Blog</Link>
-            <Link href="/tutorials" className="text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">Tutorials</Link>
-          </div>
-
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-white font-medium mb-2">Community</h3>
-            <Link href="https://x.com/ANIMESHSAWANT1" className="flex items-center space-x-2 text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">
-              <Twitter className="w-4 h-4" /> <span>Twitter</span>
-            </Link>
-            <Link href="https://github.com/Animiiexe/CoverAi" className="flex items-center space-x-2 text-white/70 hover:text-[#BA3CFF] transition-colors text-sm">
-              <Heart className="w-4 h-4" /> <span>GitHub</span>
-            </Link>
+          <div>
+            <h4 className="text-white font-medium mb-4">Resources</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link
+                  href="/documentation"
+                  className="hover:text-white text-sm"
+                >
+                  Documentation
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-white text-sm">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/tutorials" className="hover:text-white text-sm">
+                  Tutorials
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} CoverAI. No rights reserved - Open Source
-          </p>
-          
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-white/50 hover:text-[#BA3CFF] transition-colors text-sm">Privacy</Link>
-            <Link href="/terms" className="text-white/50 hover:text-[#BA3CFF] transition-colors text-sm">Terms</Link>
-            <Link href="/cookies" className="text-white/50 hover:text-[#BA3CFF] transition-colors text-sm">Cookies</Link>
-          </div>
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} CoverAI. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
