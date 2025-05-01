@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Sparkles, Sliders, Edit3, Image, Zap } from 'lucide-react';
+import PricingPage from '@/components/PricingPage';
 
 const ProductPage = () => {
   const features = [
@@ -80,60 +81,7 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Integrations Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
-            Powerful Integrations
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {integrations.map((integration, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="rounded-xl overflow-hidden group relative border border-purple-900/50"
-              >
-                <img
-                  src={integration.image}
-                  alt={integration.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-6">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2 text-white">{integration.title}</h3>
-                    <p className="text-purple-200">{integration.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-transparent to-purple-950/50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
-              Ready to Get Started?
-            </h2>
-            <p className="text-purple-200 mb-8">
-              Join thousands of creators who are already using CoverAI to bring their ideas to life.
-            </p>
-            <Link href="/">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-lg font-medium text-white  bg-[#BA3CFF] hover:bg-[#A82EF7] transition-all shadow-lg shadow-purple-500/20 flex items-center gap-2 mx-auto"
-            >
-              <Zap className="w-5 h-5"/>
-              Generate Your First Image
-            </motion.button></Link>
-          </div>
-        </div>
-      </section>
+    <PricingPage />
     </div>
   );
 };

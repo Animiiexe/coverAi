@@ -40,51 +40,26 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-4">Product</h4>
+            <h4 className="text-white font-medium mb-4">About us</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/features" className="hover:text-white text-sm">
-                  Features
+                <Link href="/product" className="hover:text-white text-sm">
+                  Product
                 </Link>
               </li>
               <li>
-                <Link href="#Pricing-section" className="hover:text-white text-sm">
-                  Pricing
+                <Link href="/resources" className="hover:text-white text-sm">
+                  Resources
                 </Link>
               </li>
               <li>
-                <Link href="/examples" className="hover:text-white text-sm">
-                  Examples
+                <Link href="/community" className="hover:text-white text-sm">
+                  Community
                 </Link>
               </li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="text-white font-medium mb-4">Resources</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link
-                  href="/documentation"
-                  className="hover:text-white text-sm"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-white text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/tutorials" className="hover:text-white text-sm">
-                  Tutorials
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="relative overflow-hidden p-5 rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50">
-      
+          <div className="relative overflow-hidden p-5 rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 w-full md:col-span-2">
             <div className="relative z-10">
               <div className="flex items-start gap-3 mb-4">
                 <div className="p-2 bg-purple-600/20 rounded-lg">
