@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getUserFromCookies } from "@/lib/getUser";
 import { logout } from "@/actions/userController";
 import { Sparkles } from "lucide-react";
-
 export default async function Header() {
   const user = await getUserFromCookies();
 
@@ -22,7 +21,29 @@ export default async function Header() {
             </span>
           </Link>
 
-          {/* Navigation */}
+          {/* Main Navigation Links */}
+          <div className="hidden md:flex items-center space-x-9 mx-6">
+            <Link
+              href= "/product"
+              className="text-white/90 hover:text-white transition-colors font-medium"
+            >
+              Product
+            </Link>
+            <Link
+              href="/resources"
+              className="text-white/90 hover:text-white transition-colors font-medium"
+            >
+              Resources
+            </Link>
+            <Link
+              href="/community"
+              className="text-white/90 hover:text-white transition-colors font-medium"
+            >
+              Community
+            </Link>
+          </div>
+
+          {/* Right-side Navigation */}
           <nav className="flex items-center space-x-3 sm:space-x-4">
             {user ? (
               <>
@@ -42,12 +63,14 @@ export default async function Header() {
                 </form>
               </>
             ) : (
-              <Link
-                href="/login"
-                className="px-5 py-2 rounded-lg font-medium text-white bg-[#BA3CFF] hover:bg-[#A82EF7] transition-colors shadow-md hover:shadow-[#BA3CFF]/40"
-              >
-                Sign In
-              </Link>
+              <>
+                <Link
+                  href="/login"
+                  className="px-5 py-2 rounded-lg font-medium text-white bg-[#BA3CFF] hover:bg-[#A82EF7] transition-colors shadow-md hover:shadow-[#BA3CFF]/40"
+                >
+                  Sign In
+                </Link>
+              </>
             )}
           </nav>
         </div>

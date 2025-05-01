@@ -28,7 +28,9 @@ export default function Dashboard() {
           </p>
         </div>
       </div>
-      <PricingPage/>
+      <div id="Pricing-section">
+        <PricingPage />
+      </div>
     </div>
   );
 }

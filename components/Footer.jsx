@@ -4,7 +4,7 @@ import { Sparkles, Twitter, Github, Mail, Send } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0c0a16] py-12 px-10 mt-2">
+    <footer className="bg-[#0c0a16] py-12 px-10">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 mt-6">
               <a
-                href="https://twitter.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -29,7 +29,7 @@ const Footer = () => {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Animiiexe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -48,7 +48,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-white text-sm">
+                <Link href="#Pricing-section" className="hover:text-white text-sm">
                   Pricing
                 </Link>
               </li>
