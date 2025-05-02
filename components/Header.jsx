@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getUserFromCookies } from "@/lib/getUser";
 import { logout } from "@/actions/userController";
 import { Sparkles } from "lucide-react";
+import HeaderTour from "./HeaderTour";
+
 export default async function Header() {
   const user = await getUserFromCookies();
 
@@ -26,18 +28,21 @@ export default async function Header() {
             <Link
               href= "/product"
               className="text-white/90 hover:text-white transition-colors font-medium"
+              id="product-link"
             >
               Product
             </Link>
             <Link
               href="/resources"
               className="text-white/90 hover:text-white transition-colors font-medium"
+              id="resources-link"
             >
               Resources
             </Link>
             <Link
               href="/community"
               className="text-white/90 hover:text-white transition-colors font-medium"
+              id="community-link"
             >
               Community
             </Link>
@@ -47,8 +52,10 @@ export default async function Header() {
           <nav className="flex items-center space-x-3 sm:space-x-4">
             {user ? (
               <>
+              <HeaderTour />
                 <Link
-                  href="/create"
+                  href="/upload"
+                  id="create-button"
                   className="px-5 py-2 rounded-lg font-medium text-white bg-[#BA3CFF] hover:bg-[#A82EF7] transition-colors shadow-md hover:shadow-[#BA3CFF]/40"
                 >
                   Create
