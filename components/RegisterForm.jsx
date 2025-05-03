@@ -4,9 +4,13 @@ import { motion } from "framer-motion";
 import { Sparkles, ImageIcon, Zap, ChevronRight } from "lucide-react";
 import { register } from "@/actions/userController";
 import Alert from "./Alert";
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function RegisterForm() {
   const [formState, formAction] = useActionState(register, {});
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-black text-white overflow-hidden">
@@ -118,12 +122,29 @@ export default function RegisterForm() {
                   Password
                 </label>
               </div>
-              <input
-                name="password"
-                type="password"
-                placeholder="••••••••"
-                className="w-full py-2.5 px-2 bg-gray-900/80  rounded-md"
-              />
+              <div>
+                <div className="relative">
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="••••••••"
+                    className="w-full py-2.5 px-2 bg-gray-900/80 rounded-md pr-8" // Added pr-8 for padding on the right
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
+              </div>
               {formState?.errors?.password && (
                 <Alert message={formState.errors?.password} />
               )}

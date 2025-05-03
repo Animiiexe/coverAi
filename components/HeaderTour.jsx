@@ -9,7 +9,11 @@ export default function HeaderTour() {
   useEffect(() => {
     const screenWidth = window.innerWidth;
     const MIN_WIDTH = 768; // Set your desired minimum width
+    const hasSeenTutorial = localStorage.getItem("hasSeenTutorial");
 
+    if (screenWidth < MIN_WIDTH || hasSeenTutorial === "true") {
+      return;
+    }
     if (screenWidth < MIN_WIDTH) {
       // Skip initializing the tour on small screens
       return;
@@ -54,6 +58,7 @@ export default function HeaderTour() {
     });
 
     driverObj.drive();
+    localStorage.setItem("hasSeenTutorial", "true");
 
     return () => {
       driverObj.destroy();

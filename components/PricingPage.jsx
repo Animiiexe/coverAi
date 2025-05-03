@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, HelpCircle, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 const PricingPage = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -221,9 +222,11 @@ const PricingPage = () => {
               <button className="px-8 py-3 rounded-lg font-medium bg-[#BA3CFF] hover:bg-[#A82EF7] text-white transition-colors shadow-lg shadow-[#BA3CFF]/20">
                 Contact Sales
               </button>
-              <button className="px-8 py-3 rounded-lg font-medium bg-transparent hover:bg-gray-800 text-white border border-gray-700 transition-colors">
+              <Link href="https://discord.com/users/1092853812747833504">    <button className="px-8 py-3 rounded-lg font-medium bg-transparent hover:bg-gray-800 text-white border border-gray-700 transition-colors">
                 Join Discord
-              </button>
+              </button></Link>
+              
+          
             </div>
           </div>
         </div>

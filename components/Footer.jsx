@@ -1,8 +1,21 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
 import { Sparkles, Twitter, Github, Mail, Send } from "lucide-react";
 
 const Footer = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (email.trim()) {
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 3000);
+    }
+    return setEmail("");
+  };
   return (
     <footer className="bg-[#0c0a16] py-12 px-10">
       <div className="container-custom">
@@ -75,19 +88,29 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="space-y-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full bg-[#12101a]/90 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-                />
-                <button className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center gap-2">
-                  <Send className="w-4 h-4" />
-                  Subscribe Now
-                </button>
-              </div>
-
+              <form onSubmit={handleSubmit}>
+                <div className="space-y-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full bg-[#12101a]/90 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    Subscribe Now
+                  </button>{" "}
+                  {submitted && (
+                    <p className="text-green-400 text-center text-sm">
+                      Thanks for subscribing!
+                    </p>
+                  )}
+                </div>
+              </form>
               <p className="text-xs text-gray-400/80 mt-3">
                 We respect your privacy. Unsubscribe at any time.
               </p>
