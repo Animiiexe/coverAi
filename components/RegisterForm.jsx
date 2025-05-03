@@ -127,7 +127,6 @@ export default function RegisterForm() {
                   <input
                     name="password"
                     type={showPassword ? "text" : "password"}
-                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     className="w-full py-2.5 px-2 bg-gray-900/80 rounded-md pr-8" // Added pr-8 for padding on the right
