@@ -32,17 +32,17 @@ const CommunityPage = () => {
 
   const showcaseImages = [
     {
-      url: "https://img.freepik.com/free-photo/digital-art-with-city-architecture-scenery_23-2151065675.jpg?t=st=1746086558~exp=1746090158~hmac=82310632844361bf4de9bab9717ebde1f0bd7408a289b4af639a75aae6952f7d&w=1380",
+      url: "https://img.freepik.com/free-photo/digital-art-with-city-architecture-scenery_23-2151065675.jpg",
       creator: "Alex Chen",
       title: "Futuristic City",
     },
     {
-      url: "https://img.freepik.com/free-photo/lights-prisms-effect-close-up_23-2148917884.jpg?t=st=1746086738~exp=1746090338~hmac=823bffcb727ffff80f4961252123f7bf6950b9e6de38ae8e779106927db2a191&w=1380",
+      url: "https://img.freepik.com/free-photo/lights-prisms-effect-close-up_23-2148917884.jpg",
       creator: "Sarah Johnson",
       title: "Abstract Dreams",
     },
     {
-      url: "https://img.freepik.com/free-photo/leafy-tree-branch-vibrant-autumn-colors-generated-by-ai_188544-10399.jpg?t=st=1746086659~exp=1746090259~hmac=84f0d65f535f73408bf637f070b3f2bc8093f8c11b9b44bdb87e3fb226c97a02&w=1380",
+      url: "https://img.freepik.com/free-photo/leafy-tree-branch-vibrant-autumn-colors-generated-by-ai_188544-10399.jpg",
       creator: "Mike Williams",
       title: "Nature's Beauty",
     },
